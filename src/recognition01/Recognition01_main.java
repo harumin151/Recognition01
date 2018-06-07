@@ -15,7 +15,7 @@ public class Recognition01_main {
 	public static void main(String[] args){
 
 	VisualRecognition service = new VisualRecognition("2018-03-19");
-	service.setApiKey("e04ca9963f0798e059d0de9dc5a296c29ef447a6");
+	service.setApiKey("J16015");
 
 	DetectFacesOptions detectFacesOptions = null;
 	try {
@@ -70,6 +70,13 @@ public class Recognition01_main {
 			node.get("images").get(0).get("faces").get(0)
 			.get("gender").get("score").asInt();
 	System.out.println("Gender_score:" + gender_score);
+
+
+
+	MySQL mysql = new MySQL();
+
+	mysql.updateImage(age_min, age_max,age_score,gender,gender_score);
+
 
 
 	}
